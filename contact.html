@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-8439359314961954">
+    <title>Thanjavur – The Cultural Capital of Tamil Nadu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .contact-section {
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            background: url('img/header.jpeg') center/cover no-repeat;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .contact-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .form-side,
+        .text-side {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-side h2,
+        .text-side h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-side input,
+        .form-side textarea {
+            border-radius: 10px;
+            border: 1px solid #ced4da;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .form-side button {
+            width: 100%;
+            border-radius: 50px;
+            padding: 15px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .form-side button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-side p {
+            line-height: 1.8;
+            color: #555;
+            font-size: 16px;
+        }
+
+        #formMessage {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @media (max-width: 991px) {
+            .row-contact {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav id="Navbar" class="navbar px-3 px-md-4 py-md-1">
+
+        <div class="website-name text-white">
+            <div class="logo-img">
+
+            </div>
+
+            <h2 class="logo-style ps-3"> Nithin Blog </h2>
+        </div>
+
+        <div class="navbar-item">
+            <div class="navbar-menu pe-5">
+                <ul class="navbar-menu-links text-white">
+                    <a href="home.html">
+                        <li> Home </li>
+                    </a>
+
+                    <a href="history.html">
+                        <li> History </li>
+                    </a>
+
+                    <a href="culture.html">
+                        <li> Culture </li>
+                    </a>
+
+                    <a href="contact.html">
+                        <li> Contact </li>
+                    </a>
+                </ul>
+
+            </div>
+
+            <!--
+            <a href="cart.php" class="add-cart">
+                <i class="bi bi-bag-fill"></i>
+                <span class="cart-count"> 0 </span>
+            </a>  -->
+
+        </div>
+
+        <div class="navbar-menu-toggle" onclick="shownavbar()">
+            <i class="bi bi-list"></i>
+        </div>
+
+    </nav>
+
+    <!--Side Navbar-->
+    <aside class="side-navbar">
+        <p class="cross-symbol" onclick="closenavbar()"> <i class="fa fa-times" aria-hidden="true"></i> </p>
+
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"> <a href="home.html"> Home </a> </p>
+            <p class="side-navbar-link"> <a href="history.html"> History </a> </p>
+            <p class="side-navbar-link"> <a href="culture.html"> Culture </a> </p>
+            <p class="side-navbar-link"> <a href="contact.html"> Contact </a> </p>
+        </div>
+    </aside>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="row row-contact g-4">
+                <!-- Left Side: Contact Form -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="form-side">
+                        <h2>Contact Us</h2>
+                        <form id="contactForm">
+                            <input type="text" placeholder="Your Name" required>
+                           <input type="tel" placeholder="Your Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea rows="6" placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message</button>
+                            <div id="formMessage"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Side: Text Content -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="text-side">
+                        <h2>About Thanjavur</h2>
+                        <p>Thanjavur, the cultural heart of Tamil Nadu, is famous for its majestic temples, classical
+                            arts, and rich heritage. This city has nurtured generations of artists, musicians, and
+                            craftsmen who continue to keep its traditions alive.</p>
+                        <p>We invite you to reach out and share your experiences, suggestions, or stories about
+                            Thanjavur. Your thoughts help us preserve and celebrate the city's vibrant culture and
+                            history.</p>
+                        <p>Whether you have questions about the city’s temples, traditional arts, or upcoming festivals,
+                            we’re here to assist and connect with fellow culture enthusiasts.</p>
+                        <p>Thanjavur is also home to unique culinary delights. From soft idlis and spicy sambar to
+                            traditional sweets like Mysore pak, the food reflects the region’s rich agricultural
+                            heritage and flavorsome traditions.</p>
+                        <p>Exploring Thanjavur means diving deep into history, art, architecture, and culture, making it
+                            a living museum where every street, temple.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 text-center">
+        <div class="container">
+            <p>&copy; 2025 Thanjavur Nithin Blogs. All Rights Reserved.</p>
+            <p>Explore the Timeless Glory of Thanjavur – Heart of Tamil Culture.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        //**************************** Select Sidenavbar  *****************************//
+
+        var sidenavbar = document.querySelector(".side-navbar")
+
+        function shownavbar() {
+            sidenavbar.style.left = "0"
+        }
+        function closenavbar() {
+            sidenavbar.style.left = "-100%"
+        }
+    </script>
+
+    <script>
+
+        // Form submission simulation
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formMessage = document.getElementById('formMessage');
+            formMessage.innerHTML = '<div class="alert alert-success">Thank you! Your message has been sent.</div>';
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
